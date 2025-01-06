@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const Navbar: React.FC = () => {
@@ -27,19 +28,19 @@ const Navbar: React.FC = () => {
     <nav className="bg-primary dark:bg-primary-dark text-white dark:text-gray-100">
       <div className="hidden md:flex flex-col h-screen w-64 p-4">
         {/* Navbar para Desktop */}
-        <a href="/" className="text-lg font-bold mb-4">
+        <Link href="/" className="text-lg font-bold mb-4">
           AIOTI WEB
-        </a>
+        </Link>
         <ul className="flex flex-col gap-4">
           <li>
-            <a href="/" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
+            <Link href="/" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/travels" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
+            <Link href="/travels" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
               Viagens
-            </a>
+            </Link>
           </li>
         </ul>
         <button
@@ -52,19 +53,19 @@ const Navbar: React.FC = () => {
 
       <div className="md:hidden flex flex-row w-full p-4">
         {/* Navbar para Mobile */}
-        <a href="/" className="text-lg font-bold mr-auto">
+        <Link href="/" className="text-lg font-bold mr-auto">
           AIOTI WEB
-        </a>
+        </Link>
         <ul className="flex flex-row gap-4">
           <li>
-            <a href="/" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
+            <Link href="/" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/travels" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
+            <Link href="/travels" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
               Viagens
-            </a>
+            </Link>
           </li>
         </ul>
         <button
