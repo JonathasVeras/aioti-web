@@ -1,6 +1,12 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { FaHome } from "react-icons/fa";
+import { FaCarAlt } from "react-icons/fa";
+
+export const linkPersonalization: string = `hover:bg-blue-700 dark:hover:bg-gray-700 rounded text-xl`
+export const buttonDivPersonalization: string = `flex items-center gap-2`
 
 const Navbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,18 +34,30 @@ const Navbar: React.FC = () => {
     <nav className="bg-primary dark:bg-primary-dark text-white dark:text-gray-100">
       <div className="hidden md:flex flex-col h-screen w-64 p-4">
         {/* Navbar para Desktop */}
-        <Link href="/" className="text-lg font-bold mb-4">
-          AIOTI WEB
-        </Link>
-        <ul className="flex flex-col gap-4">
+        <div className="flex items-center">
+          <Image
+            src="/logo_png_transparent.png"
+            alt="Logo"
+            width={50}
+            height={50}
+            className="object-contain"
+          />
+        </div>
+        <ul className="grid grid-col gap-4 items-center justify-center mt-10">
           <li>
-            <Link href="/" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
-              Home
+            <Link href="/" className={linkPersonalization}>
+              <div className={buttonDivPersonalization}>
+                <FaHome />
+                Home
+              </div>
             </Link>
           </li>
           <li>
-            <Link href="/travels" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">
-              Viagens
+            <Link href="/travels" className={linkPersonalization}>
+            <div className={buttonDivPersonalization}>
+                <FaCarAlt />
+                Viagens
+              </div>
             </Link>
           </li>
         </ul>
@@ -53,9 +71,6 @@ const Navbar: React.FC = () => {
 
       <div className="md:hidden flex flex-row w-full p-4">
         {/* Navbar para Mobile */}
-        <Link href="/" className="text-lg font-bold mr-auto">
-          AIOTI WEB
-        </Link>
         <ul className="flex flex-row gap-4">
           <li>
             <Link href="/" className="hover:bg-blue-700 dark:hover:bg-gray-700 p-2 rounded">

@@ -29,6 +29,8 @@ interface ExtendedTravel extends Travel {
 
 const Travels: React.FC = () => {
   const [travels, setTravels] = useState<ExtendedTravel[]>([]);
+  const [filteredTravels, setFilteredTravels] = useState<ExtendedTravel[]>([]);
+  const [SearchbarText, setSearchbarText] = useState<string>("");
 
   useEffect(() => {
     const fetchTravels = async () => {
@@ -36,23 +38,34 @@ const Travels: React.FC = () => {
         const response = await new Promise<{ data: Travel[] }>((resolve) =>
           setTimeout(() => resolve({ data: mockData }), 1000)
         );
-        setTravels(
-          response.data.map((travel) => ({
-            ...travel,
-            deviceInfo: `${travel.device.vendor} - ${travel.device.model}`,
-            startFormatted: new Date(travel.startTravel).toLocaleString(),
-            endFormatted: new Date(travel.endTravel).toLocaleString(),
-          }))
-        );
+        const formattedTravels = response.data.map((travel) => ({
+          ...travel,
+          deviceInfo: `${travel.device.vendor} - ${travel.device.model}`,
+          startFormatted: new Date(travel.startTravel).toLocaleString(),
+          endFormatted: new Date(travel.endTravel).toLocaleString(),
+        }));
+        setTravels(formattedTravels);
+        setFilteredTravels(formattedTravels);
       } catch (error) {
         console.error("Erro ao buscar viagens:", error);
       }
     };
-  
+
     fetchTravels();
   }, []);
-  
-  
+
+  useEffect(() => {
+    const lowerSearchText = SearchbarText.toLowerCase();
+    setFilteredTravels(
+      travels.filter(
+        (travel) =>
+          travel.id.toLowerCase().includes(lowerSearchText) ||
+          travel.deviceInfo.toLowerCase().includes(lowerSearchText) ||
+          travel.startFormatted.toLowerCase().includes(lowerSearchText) ||
+          travel.endFormatted.toLowerCase().includes(lowerSearchText)
+      )
+    );
+  }, [SearchbarText, travels]);
 
   const columns: Column<ExtendedTravel>[] = [
     { header: "ID", accessor: "id" },
@@ -61,9 +74,15 @@ const Travels: React.FC = () => {
     { header: "Término", accessor: "endFormatted" },
     { header: "Pontuação Total", accessor: "totalScore" },
   ];
-  
 
-  return <SimpleTable title="Lista de Viagens" data={travels} columns={columns} />;
+  return (
+    <SimpleTable
+      title="Lista de Viagens"
+      data={filteredTravels}
+      columns={columns}
+      setSearchbarText={setSearchbarText}
+    />
+  );
 };
 
 export default Travels;
