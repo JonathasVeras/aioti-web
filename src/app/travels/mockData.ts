@@ -44,7 +44,7 @@ export const mockData: Travel[] = [
       turnsScore: 86,
     },
     {
-      id: "6f5e4d3c2b1a",
+      id: "6f5e4d3c2b2a",
       tenantId: "1a2b3c4d756f",
       device: { type: "smartphone", model: "Galaxy S22", vendor: "Samsung" },
       startTravel: "2024-12-15T10:00:00Z",
@@ -57,7 +57,7 @@ export const mockData: Travel[] = [
       turnsScore: 86,
     },
     {
-      id: "6f5e4d3c2b1a",
+      id: "6f5e4d3c2b3a",
       tenantId: "1a2b3c4d756f",
       device: { type: "smartphone", model: "Galaxy S22", vendor: "Samsung" },
       startTravel: "2024-12-15T10:00:00Z",
@@ -70,7 +70,7 @@ export const mockData: Travel[] = [
       turnsScore: 86,
     },
     {
-      id: "6f5e4d3c2b1a",
+      id: "6f5e4d3c2b4a",
       tenantId: "1a2b3c4d756f",
       device: { type: "smartphone", model: "Galaxy S22", vendor: "Samsung" },
       startTravel: "2024-12-15T10:00:00Z",
@@ -83,7 +83,7 @@ export const mockData: Travel[] = [
       turnsScore: 86,
     },
     {
-      id: "6f5e4d3c2b1a",
+      id: "6f5e4d3c2b5a",
       tenantId: "1a2b3c4d756f",
       device: { type: "smartphone", model: "Galaxy S22", vendor: "Samsung" },
       startTravel: "2024-12-15T10:00:00Z",
@@ -96,7 +96,7 @@ export const mockData: Travel[] = [
       turnsScore: 86,
     },
     {
-      id: "6f5e4d3c2b1a",
+      id: "6f5e4d3c2b6a",
       tenantId: "1a2b3c4d756f",
       device: { type: "smartphone", model: "Galaxy S22", vendor: "Samsung" },
       startTravel: "2024-12-15T10:00:00Z",
