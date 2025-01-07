@@ -110,16 +110,16 @@ const Travels: React.FC = () => {
           setSearchbarText={setSearchbarText}
         />
       ) : (
-        <div className="p-6 text-black">
-          <h1 className=" text-2xl font-bold mb-4">Cards de Viagem</h1>
+        <div className="p-6">
+          <h1 className=" text-2xl font-bold mb-4 dark:text-white">Cards de Viagem</h1>
           <div className="flex items-center gap-2 w-[400px] mb-4">
             <input
               type="text"
               placeholder="Pesquise..."
-              className="w-full p-2 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-dark dark:bg-black"
+              className="w-full p-2 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-dark dark:bg-gray-900"
               onChange={handleSearchChange}
             />
-            <FaMagnifyingGlass size={20}/>
+            <FaMagnifyingGlass size={20} className="text-black dark:text-white"/>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
             {filteredTravels.map((travel) => {
