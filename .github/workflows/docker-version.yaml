@@ -29,11 +29,11 @@ jobs:
     # 4. Build the Docker Image
     - name: Build Docker Image
       run: |
-        docker build -t your-dockerhub-username/aioti-web:latest .
-        docker build -t your-dockerhub-username/aioti-web:${{ env.COMMIT_HASH }} .
+        docker build -t nunes213/aioti-web:latest .
+        docker build -t nunes213/aioti-web:${{ env.COMMIT_HASH }} .
 
     # 5. Push the Docker Image to Docker Hub (latest and version-specific tags)
     - name: Push Docker Image to Docker Hub
       run: |
-        docker push your-dockerhub-username/aioti-web:latest
-        docker push your-dockerhub-username/aioti-web:${{ env.COMMIT_HASH }}
+        docker push nunes213/aioti-web:latest
+        docker push nunes213/aioti-web:${{ env.COMMIT_HASH }}
