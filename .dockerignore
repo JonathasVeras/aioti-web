@@ -1,0 +1,18 @@
+# Ignoring local folders not esssencials for build
+.git
+node_modules
+.next
+dist
+build
+
+# Ignoring log files
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Ignoring whortyless files
+.env
+.env.*
+
